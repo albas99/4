@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return getDetails()">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <button type="submit" value="submit" id="submit">Submit</button>
+    </form>
+    <script>
+        getDetails = () => {
+            let name = document.getElementById("name");
+    
+            let age = document.getElementById("age");
+
+            if(name.value == "" || age.value == ""){
+                alert("Empty");
+                return false;
+            }if(age.value < 16 || age.value > 40){
+                alert("Invalid age");
+                return false;
+            }
+            else{
+                alert("Hello");
+                return true;
+            }
+            
+            }
+    </script>
+</body>
+
+</html>
