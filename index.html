@@ -8,9 +8,13 @@
 <body>
     <form onsubmit="return getDetails()">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name"><br><br>
         <label for="age">Age</label>
-        <input type="number" id="age">
+        <input type="number" id="age"><br><br>
+        <label for="password">Password</label>
+        <input type="password" id="password"><br><br>
+        <label for="repeat-password" id="repeat-password">Repeat Password</label>
+        <input type="password"><br><br>
         <button type="submit" value="submit" id="submit">Submit</button>
     </form>
     <script>
@@ -26,11 +30,29 @@
                 alert("Invalid age");
                 return false;
             }
-            else{
-                alert("Hello");
+            // else{
+            //     alert("Hello");
+            //     return true;
+            // }
+            let pass1 = document.getElementById("password");
+
+            let pass2 = document.getElementById("repeat-password");
+            
+            if(pass1.value == "" || pass2.value == ""){
+                alert("Enter password");
+                return false;
+            }
+            if(pass1.value.length < 8){
+                alert("Password too short");
+                return false;
+            }
+            if(pass1.value != pass2.value){
+                alert("passwords don't match");
+                return false;
+            } else{
+                alert("Welcome");
                 return true;
             }
-            
             }
     </script>
 </body>
